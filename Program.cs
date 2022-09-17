@@ -3,11 +3,8 @@
 //78 -> третьей цифры нет
 //32679 -> 6
 
-Console.Write("Enter number: ");
-int anyNumber = Convert.ToInt32(Console.ReadLine());
-string anyNumberText = Convert.ToString(anyNumber);
-if (anyNumberText.Length > 2){
-   Console.WriteLine("third digit -> " + anyNumberText[2]);
-}
-more {
-   Console.WriteLine("-> no leading digits");
+Console.Write("Введите число: ");
+
+int n = int.Parse(Console.ReadLine());
+int k = (int)Math.Log10(n)-2;
+Console.WriteLine(k < 0 ? "Третьей цифры нет" : (n % (int)Math.Pow(10, k + 1) / (int)Math.Pow(10, k)).ToString());
